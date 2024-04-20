@@ -19,7 +19,11 @@ include("navbar.php");
                         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
                         <label for="pwd">Password</label>
                     </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="form-floating mt-3 mb-3">
+                        <input type="password" class="form-control" id="pwd2" placeholder="Enter password" name="cpswd">
+                        <label for="pwd2">Confirm Password</label>
+                    </div>
+                        <button type="submit" name="submit" class="btn btn-primary">Login</button>
                 </form>
                 </div>
             </div>
