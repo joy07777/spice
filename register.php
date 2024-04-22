@@ -11,11 +11,10 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
-        /* Additional styling for the content */
         h1 {
             color: white;
             text-align: center;
-            margin-top: 50px; /* Adjust as needed */
+            margin-top: 50px; 
         }
     </style>
 </head>
