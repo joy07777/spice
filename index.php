@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background: linear-gradient(to bottom, white, #6495ED);
+            background: linear-gradient(to bottom, white, #3B444B);
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
