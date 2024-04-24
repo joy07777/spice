@@ -67,9 +67,7 @@ if(isset($_POST["register"])){
                 $stmt->bind_param("sssss", $name, $status, $email, $hashed_password, $verify_token);
 
                 if($stmt->execute()) {
-                    
-                        $_SESSION['status'] = "Registration successful!";
-                    
+                    $_SESSION['registration_success'] = true; // Set session variable for success message
                     header("Location: register.php");
                     exit(0);
                 } else {
@@ -80,9 +78,4 @@ if(isset($_POST["register"])){
             }
         }
     }
-
-
-
-
 ?>
-<h3><?php echo $name ?></h3>

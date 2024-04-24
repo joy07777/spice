@@ -3,7 +3,7 @@ session_start();
 include("dbconn.php");
 
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["login_now"])) {
     if (!empty(trim($_POST['email'])) && !empty(trim($_POST['pwd']))) {
         $email = mysqli_real_escape_string($conn, trim($_POST['email']));
         $password = trim($_POST['pwd']); // No need to escape passwords for hashing/verification
@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
                     'email' => $row['email'],
                 ];
                 $_SESSION['status'] = "You are Logged In Successfully!";
-                header('Location: login.php');
+                header('Location: index.php');
                 exit(0);
             } else {
                 $_SESSION['status2'] = "Invalid Email or Password";

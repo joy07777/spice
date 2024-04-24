@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
@@ -20,7 +21,8 @@
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="button">Search</button>
+      sty
+        <button class="btn btn-primary btn-custom" type="button">Search</button>
       </form>
     </div>
   </div>

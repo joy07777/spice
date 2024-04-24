@@ -24,8 +24,8 @@ session_start();
 include("header.php");
 include("navbar.php");
 ?>
-
-<div class="container mt-4">
+<div class="background-image">
+<div class="container mt-3">
     <div class="row justify-content-center"><!-- Center the content -->
         <div class="col-md-6"><!-- Specify the width of the column -->
         <?php
@@ -37,6 +37,17 @@ include("navbar.php");
             </div> 
         <?php
             unset($_SESSION ['status']);
+            } 
+            // Check if registration success message is set
+            if (isset($_SESSION['registration_success']) && $_SESSION['registration_success']) {
+        ?> 
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>Success!</strong> Registration successful
+            </div> 
+        <?php
+                // Unset the session variable to prevent displaying the message again on page refresh
+                unset($_SESSION['registration_success']);
             } 
         ?>
             <div class="card">
@@ -73,6 +84,8 @@ include("navbar.php");
             </div>
         </div>
     </div>
+</div>
+
 </div>
 
 <?php
