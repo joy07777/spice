@@ -25,7 +25,7 @@ if (isset($_POST["login_now"])) {
                     'email' => $row['email'],
                 ];
                 $_SESSION['status'] = "You are Logged In Successfully!";
-                header('Location: index.php');
+                header("Location: index.php");
                 exit(0);
             } else {
                 $_SESSION['status2'] = "Invalid Email or Password";

@@ -31,7 +31,7 @@ include("navbar.php");
             <div class="card">
                 <div class="card-header"><h4>Login</h4></div>
                 <div class="card-body">
-                    <form action="login_code.php">
+                    <form action="indexx.html" method="POST">
                         <div class="form-floating mb-3 mt-3">
                             <input type="text" class="form-control" id="email" placeholder="Email" name="email">
                             <label for="email">Email</label>
