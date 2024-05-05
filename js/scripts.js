@@ -81,7 +81,7 @@ const barChartOptions = {
     theme: 'dark',
   },
   xaxis: {
-    categories: ['Laptop', 'Phone', 'Monitor', 'Headphones', 'Camera'],
+    categories: ['Shirt', 'Pants', 'Cardigan', 'Skirt', 'Dress'],
     title: {
       style: {
         color: '#f5f7ff',
@@ -251,3 +251,4 @@ const areaChart = new ApexCharts(
   areaChartOptions
 );
 areaChart.render();
+
