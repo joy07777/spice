@@ -37,7 +37,7 @@ include("navbar.php");
                             <label for="email">Email</label>
                         </div>
                         <div class="form-floating mt-3 mb-3">
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
                             <label for="pwd">Password</label>
                         </div>
                         <button type="submit" name="login_now" class="btn btn-secondary">Login</button><!-- Changed the button color to gray -->

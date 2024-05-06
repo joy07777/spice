@@ -87,12 +87,12 @@
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#" target="_blank">
+            <a href="inventory.php">
               <span class="material-icons-outlined">fact_check</span> Inventory
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#" target="_blank">
+            <a href="reports.php">
               <span class="material-icons-outlined">poll</span> Reports
             </a>
           </li>
@@ -165,18 +165,17 @@
 
     </div>
 
-    <!-- Scripts -->
-    <!-- ApexCharts -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
     <!-- Custom JS -->
     <script src="js/scripts.js"></script>
     <script>
-      function confirmLogout() {
+     function confirmLogout() {
         var logoutConfirmed = confirm("Are you sure you want to log out?");
-        if (logoutConfirmed) {
-          window.location.href = "login.php";
+        if (logoutConfirmed) { 
+        window.location.href = "logout.php";
         }
-      }
+    } 
     </script>
   </body>
 </html>

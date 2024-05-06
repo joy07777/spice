@@ -20,6 +20,7 @@
 </head>
 <body>
 <?php
+session_name('MySession');
 session_start();
 include("header.php");
 include("navbar.php");

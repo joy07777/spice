@@ -1,22 +1,22 @@
 <?php
+
 session_start();
+
+
 include("dbconn.php");
 
-
 if (isset($_POST["login_now"])) {
-    if (!empty(trim($_POST['email'])) && !empty(trim($_POST['pwd']))) {
-        $email = mysqli_real_escape_string($conn, trim($_POST['email']));
-        $password = trim($_POST['pwd']); // No need to escape passwords for hashing/verification
+    if (!empty($_POST['email']) && !empty($_POST['pwd'])) {
+        $email = $_POST['email'];
+        $password = $_POST['pwd'];
 
+        $login_query = "SELECT * FROM users WHERE email=? LIMIT 1";
+        $stmt = mysqli_prepare($conn, $login_query);
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-        $login_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
-        $login_query_run = mysqli_query($conn, $login_query);
-
-
-        if (mysqli_num_rows($login_query_run) > 0) {
-            $row = mysqli_fetch_array($login_query_run);
-
-
+        if ($row = mysqli_fetch_assoc($result)) {
             // Verify the password against the hashed password in the database
             if (password_verify($password, $row['password'])) {
                 $_SESSION['authenticated'] = TRUE;
@@ -26,23 +26,29 @@ if (isset($_POST["login_now"])) {
                 ];
                 $_SESSION['status'] = "You are Logged In Successfully!";
                 header("Location: index.php");
-                exit(0);
+                exit();
             } else {
+                // Incorrect password
                 $_SESSION['status2'] = "Invalid Email or Password";
+                // Redirect to login page after setting the session status
                 header("Location: login.php");
-                exit(0);
+                exit();
             }
         } else {
             $_SESSION['status2'] = "Invalid Email or Password";
+            // Redirect to login page after setting the session status
             header("Location: login.php");
-            exit(0);
+            exit();
         }
     } else {
         $_SESSION['status2'] = "All fields are Mandatory";
+        // Redirect to login page after setting the session status
         header("Location: login.php");
-        exit(0);
+        exit();
     }
 }
+
+// Redirect to login page if login_now is not set
+header("Location: login.php");
+exit();
 ?>
-
-

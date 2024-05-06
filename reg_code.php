@@ -1,4 +1,5 @@
 <?php 
+session_name('MySession');
 session_start();
 include("dbconn.php");
 
