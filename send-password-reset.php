@@ -25,7 +25,7 @@ if ($stmt->affected_rows) { // Check affected_rows on $stmt instead of $mysqli
 
     $mail = require __DIR__ . "/mailer.php"; // Correct the path to the mailer.php file
 
-    $mail->setFrom("pearljoyantecristo006@gmail.com"); // Remove the unnecessary square bracket
+    $mail->setFrom("pearljoyantecristo006@gmail.com"); // Remove the unnecessary square brack
     $mail->addAddress($email);
     $mail->Subject = "Password Reset";
     $mail->Body = <<<END
