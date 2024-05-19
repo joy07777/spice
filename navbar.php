@@ -21,7 +21,6 @@
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="text" placeholder="Search">
-      sty
         <button class="btn btn-primary btn-custom" type="button">Search</button>
       </form>
     </div>

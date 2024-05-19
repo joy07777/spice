@@ -9,3 +9,9 @@
     width: 100%;
     height: calc(100vh - 60px); 
 }
+
+.btn-custom {
+    background-color: gray !important;
+    border-color: gray !important;
+  }
+  
