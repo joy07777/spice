@@ -8,24 +8,24 @@ $token_hash = hash("sha256", $token);
 
 $expiry = date("Y-m-d H:i:s", time() + 60 * 30);
 
-$mysqli = require __DIR__ . "/dbconn.php"; // Ensure dbconn.php returns the MySQLi connection object
+$mysqli = require __DIR__ . "/dbconn.php";
 
 $sql = "UPDATE users
         SET reset_token_hash = ?,
             reset_token_expires_at = ?
         WHERE email = ?";
 
-$stmt = $conn->prepare($sql);
+$stmt = $mysqli->prepare($sql);
 
 $stmt->bind_param("sss", $token_hash, $expiry, $email);
 
 $stmt->execute();
 
-if ($stmt->affected_rows) { // Check affected_rows on $stmt instead of $mysqli
+if ($mysqli->affected_rows) {
 
-    $mail = require __DIR__ . "/mailer.php"; // Correct the path to the mailer.php file
+    $mail = require __DIR__ . "/mailer.php";
 
-    $mail->setFrom("pearljoyantecristo006@gmail.com"); // Remove the unnecessary square brack
+    $mail->setFrom("pearljoyantecristo006@gmail.com");
     $mail->addAddress($email);
     $mail->Subject = "Password Reset";
     $mail->Body = <<<END
@@ -48,4 +48,3 @@ if ($stmt->affected_rows) { // Check affected_rows on $stmt instead of $mysqli
 }
 
 echo "Message sent, please check your inbox.";
-?>

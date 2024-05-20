@@ -6,7 +6,7 @@ $token_hash = hash("sha256", $token);
 
 $mysqli = require __DIR__ . "/dbconn.php";
 
-$sql = "SELECT * FROM user
+$sql = "SELECT * FROM users
         WHERE reset_token_hash = ?";
 
 $stmt = $mysqli->prepare($sql);
@@ -45,7 +45,7 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-$sql = "UPDATE user
+$sql = "UPDATE users
         SET password_hash = ?,
             reset_token_hash = NULL,
             reset_token_expires_at = NULL
