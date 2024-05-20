@@ -34,7 +34,7 @@ if ($mysqli->affected_rows) {
     to reset your password.
 
     END;
-
+//gdgdf
     try {
 
         $mail->send();
